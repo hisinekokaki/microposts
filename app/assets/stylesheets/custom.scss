@@ -12,7 +12,7 @@ section{
 }
 
 textarea{
-    overflow: vertical;
+   resize: vertical;
 }
 
 .center{
@@ -65,7 +65,7 @@ p {
 
 #logo:hover {
     color:#fff;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 /* mixins, variables, etc. */
@@ -89,4 +89,19 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }

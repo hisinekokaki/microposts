@@ -28,3 +28,15 @@ class UsersController < ApplicationController
     end
 end
 
+
+
+
+
+#ユーザープロファイルがここから？
+  def edit
+    
+  end
+  
+  def update
+  
+  end

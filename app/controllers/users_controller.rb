@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
   
+   def edit #追加
+    @user = User.find(params[:id])
+  end
+  
     
     
     def create

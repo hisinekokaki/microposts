@@ -9,9 +9,15 @@
         <%= form_for(@user) do |f| %>
             <%= f.label :area %>
             <%= f.text_field :area %>
+        <% end %>
         
+        
+        <%= form_for(@user) do |f| %>
+            <%= f.label :profile %>
+            <%= f.text_field :profile %>
             
             <%= f.submit "edit my account", class: "btn btn-large btn-primary" %>
+            
         <% end %>
     </div>
 </div>

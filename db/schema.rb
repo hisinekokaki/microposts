@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216211846) do
+ActiveRecord::Schema.define(version: 20151218195217) do
 
   create_table "userprofiles", force: :cascade do |t|
     t.string   "profile"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20151216211846) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "area"
+    t.string   "profile"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

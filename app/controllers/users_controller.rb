@@ -10,13 +10,20 @@ class UsersController < ApplicationController
   
   def edit #追加
     @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to root_url, alert: '不正なアクセスです'
+    
+    end
   end
   
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    
+    unless @user == current_user
+      redirect_to root_url, alert: '不正なアクセスです'
+      
+    else @user.update(user_params)
       redirect_to root_path , notice: '情報が更新されました。'
-    else render 'update'
       
     end
   end

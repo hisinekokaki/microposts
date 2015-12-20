@@ -13,21 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20151218195217) do
 
-  create_table "userprofiles", force: :cascade do |t|
-    t.string   "profile"
-    t.string   "mail"
-    t.string   "area"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "area"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "area"
     t.string   "profile"
   end
 

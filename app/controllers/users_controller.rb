@@ -19,12 +19,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     
-    unless @user == current_user
-      redirect_to root_url, alert: '不正なアクセスです'
-      
-    else @user.update(user_params)
-      redirect_to root_path , notice: '情報が更新されました。'
-      
+    if @user != current_user
+      redirect_to root_path, alert: '不正なアクセスです'
+    elsif @user.update(user_params)
+      redirect_to root_path, notice: '情報が更新されました。'
+    else
+      render 'edit'
     end
   end
     
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         flash[:success] = "Welcome to the Sample App!"
-        redirect_to @user #　ここを修正
+        redirect_to @user # ここを修正
       else
         render 'new'
       end

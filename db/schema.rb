@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20151218195217) do
     t.string   "area"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "profile"
+    t.text     "profile"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
